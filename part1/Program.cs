@@ -20,11 +20,11 @@ namespace part1
 
         public static int CalculateTip(double amount, string rating)
         {
-            switch (rating)
+            switch (rating.ToLowerInvariant())              // case insensitive
             {
                 case "terrible":
-                    double percent = 0;
-                    int tip = 0;
+                    double percent = 0;                     // just to initialise the variable
+                    int tip = 0;                            // no tip so no calculation needed
                     return tip;
                 case "poor":
                     percent = 0.05;
@@ -43,7 +43,7 @@ namespace part1
                     tip = (int)Math.Ceiling(percent * amount);
                     return tip;
                 default:
-                    return -1;
+                    return -1;                             // default returns -1 in the case of an invalid input
             }
         }
     }
