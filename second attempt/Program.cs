@@ -7,10 +7,7 @@
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             Console.ForegroundColor = ConsoleColor.DarkRed;
 
-
             MenuView();
-
-
         }
 
 
@@ -25,21 +22,25 @@
             if (userChoice == 1)
                 GrossPay();
             else if (userChoice == 2)
-                Console.WriteLine();
+            {
+
+            }
             else if (userChoice == 3)
                 Console.WriteLine("You have exited the menu");
         }
 
 
+        static string[] names = new string[10];
+        static double[] wages = new double[10];
+
         static void GrossPay()
         {
+
             //initialising the variables for the user input menu
             string status = "";
             int years = 0;
             int hours = 0;
 
-            string[] names = new string[10];
-            double[] wages = new double[10];
 
             for (int i = 0; i < names.Length; i++)
             {
@@ -58,6 +59,7 @@
 
                 Console.WriteLine($"\n{names[i]} you worked {hours} hours and your wages are {wages[i]:c}\n\n");
                 MenuView();
+
             }
         }
 
@@ -98,11 +100,5 @@
 
             return wageAmount;
         }
-
-
-
-
-
-
     }
 }
